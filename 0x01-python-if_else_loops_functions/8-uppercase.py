@@ -6,5 +6,5 @@ def uppercase(string):
         if ord(c) != range(97, 123):
             s = s + c
         else:
-            s = s + (ord(c) - 32)
+            s = s + chr((ord(c) - 32))
     print("{:s}".format(s))
