@@ -7,4 +7,4 @@ def square_matrix_simple(matrix=[]):
             inside.append(element**2)
         outside.append(inside)
     
-#    return outside
+    return outside
