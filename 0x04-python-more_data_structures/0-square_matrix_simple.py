@@ -6,5 +6,4 @@ def square_matrix_simple(matrix=[]):
         for element in row:
             inside.append(element**2)
         outside.append(inside)
-    
     return outside
