@@ -1,3 +1,7 @@
-#!/usr/bin/python3
-def square_matrix_sample(matrix=[]):
-    return [[row[i] ** 2 for row in matrix] for i in range(3)]
+def square_matrix_simple(matrix=[]):
+    def square(array):
+        result = []
+        for cell in array:
+            result.append(cell ** 2)
+        return result
+    return list(map(square, matrix))
