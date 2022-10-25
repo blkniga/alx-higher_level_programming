@@ -6,5 +6,10 @@ class Square:
     """This is a class that defines a Square"""
 
     def __init__(self, size):
-        """This is an initialization method which takes the parameter of size"""
+        """This is an initialization method.
+
+        Args:
+            size: The size parameter.
+
+        """
         self._size = size
