@@ -12,4 +12,4 @@ class Square:
             size: The size parameter.
 
         """
-        self._size = size
+        self.__size = size
