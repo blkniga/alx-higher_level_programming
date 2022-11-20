@@ -74,4 +74,4 @@ class Rectangle:
         """This is the delete method that shows before an instance is
         deleted"""
 
-        return 'Bye rectangle...'
+        print('Bye rectangle...')
