@@ -53,13 +53,13 @@ class Rectangle:
             return 0
         else:
             return (2 * self.__width) + (2 * self.__height)
-    
+
     def __str__(self):
         """This is the string representation of the class."""
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return ''
         else:
-            for x in range(self.__height):
-                for y in range(self.__width):
-                    return '#'
-                return ''
+            res = list(map(
+                lambda x: '#' * self.width + '\n' * (x != self.height - 1),
+                range(self.height)))
+            return ''.join(res)
