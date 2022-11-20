@@ -10,7 +10,6 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """This is the initialization method for the class Rectangle.
-
         Args:
             width: This is the width of the rectangle.
             height: This is the height of the rectange.
@@ -61,14 +60,18 @@ class Rectangle:
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """This is method that returns the biggest rectangle based on area"""
-        if !(isinstance(rect_1, Rectangle)):
+        if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
-        elif !(isinstance(rect_2, Rectangle)):
+        elif not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
         elif rect_1.area() == rect_2.area():
             return rect_1
         else:
-            return max(rect_1.area(), rect_2.area())
+            mx = max(rect_1.area(), rect_2.area())
+            if rect_1.area() == mx:
+                return rect_1
+            else:
+                return rect_2
 
     def __str__(self):
         """This is the string representation of the class."""
