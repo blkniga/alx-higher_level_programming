@@ -57,9 +57,9 @@ class Rectangle:
     def __str__(self):
         """This is the string representation of the class."""
         if self.__width == 0 or self.__height == 0:
-            print('')
+            return ''
         else:
             for x in range(self.__height):
                 for y in range(self.__width):
-                    print('#', end='')
-                print('')
+                    return '#'
+                return ''
