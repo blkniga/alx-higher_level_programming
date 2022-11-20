@@ -5,7 +5,7 @@
 class Rectangle:
     """This is a class definition of a Rectangle."""
 
-    number_of_instance = 0
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """This is the initialization method for the class Rectangle.
@@ -16,7 +16,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        type(self).number_of_instances += 1
+        self.number_of_instances += 1
 
     @property
     def width(self):
@@ -77,5 +77,5 @@ class Rectangle:
         """This is the delete method that shows before an instance is
         deleted"""
 
-        type(self).number_of_instances -= 1
+        self.number_of_instances -= 1
         print('Bye rectangle...')
