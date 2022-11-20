@@ -64,7 +64,7 @@ class Rectangle:
             return ''
         else:
             res = list(map(
-                lambda x: type(self).string_symbol * self.width + '\n' * (x != self.height - 1),
+                lambda x: Rectangle.string_symbol * self.width + '\n' * (x != self.height - 1),
                 range(self.height)))
             return ''.join(res)
 
