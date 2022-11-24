@@ -1,0 +1,16 @@
+How to use 0-add-integer.py
+===========================
+
+This module uses one function called ``add_integer()``.
+
+``add_integer()`` returns the addition of two integers:
+
+	>>> from ../0-add-integer import add_integer
+	>>> add_integer(1, 2)
+	3
+	>>> add_integer(100.3, -2)
+	98
+	>>> add_integer('a', 5)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
