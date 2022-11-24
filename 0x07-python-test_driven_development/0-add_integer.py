@@ -1,24 +1,17 @@
 #!/usr/bin/python3
-"""This is a module features a function which adds two integers"""
+"""
+Describes a function to adding two integers
+"""
 
 
 def add_integer(a, b=98):
-    """This is a funtion that adds two integers.
-
-    Args:
-        a: This is the first parameter
-        b: This is the second parameter
-
-    Returns:
-        An addition of two integers
+    """Take the arguments to add.
+    a: One of the numbers, default not defined.
+    b: The other number, default 98.
+    Return: int(a + b)
     """
-    if type(a) != int or type(a) != float:
+    if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
-    elif type(b) != int or type(b) != float:
+    if type(b) not in [int, float]:
         raise TypeError("b must be an integer")
-    elif type(a) == float:
-        a = int(a)
-    elif type(b) == float:
-        b = int(b)
-    else:
-        return a + b
+    return int(a) + int(b)
