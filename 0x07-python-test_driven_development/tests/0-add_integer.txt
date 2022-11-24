@@ -1,15 +1,60 @@
-How to use 0-add-integer.py
-===========================
+Test cases for 0-add_integer module
+===================================
 
-This module uses one function called ``add_integer()``.
+The 0-add_integer module takes two integers or floats as arguments and returns their sum
 
-``add_integer()`` returns the addition of two integers:
+Usage
+=====
+
+Importing function from the module:
     >>> add_integer = __import__('0-add_integer').add_integer
-    >>> add_integer(1, 2)
-    3
-    >>> add_integer(100.3, -2)
-    98
-    >>> add_integer('a', 5)
+
+Adding two positive integers (a = 1 and b = 1)
+    >>> add_integer(1, 1)
+    2
+
+Adding one positive and one negative integer (a = 10 and b = -4)
+    >>> add_integer(10, -4)
+    6
+
+Adding two negative integers (a = -10 and b = -4)
+    >>> add_integer(-10, -4)
+    -14
+
+Adding two integers with the second being the same as the default value of b (a = 2 and b = 98)
+    >>> add_integer(2)
+    100
+
+Adding a positive float and a positive integer (a = 2.5 and b = 5)
+    >>> add_integer(2.5, 5)
+    7
+
+Adding a float and an integer where the integer is equal to the default value of b (a = 2.5 and b = 98)
+    >>> add_integer(2.5)
+    100
+
+Adding a positive float and a negative integer (a = 10.5 and b = -2)
+	    >>> add_integer(10.5, -2)
+	    8
+
+Adding two negative floats (a = -10.5 and b = -2)
+	    >>> add_integer(-10.5, -2)
+	    -12
+
+Adding an integer number and a string (a = 4 and b = "School")
+    >>> add_integer(4, "School")
     Traceback (most recent call last):
-    ...
+	      ...
+    TypeError: b must be an integer
+
+Passing no argument to the function
+    >>> add_integer(None)
+    Traceback (most recent call last):
+	      ...
+    TypeError: a must be an integer
+
+Adding a letter and a number (a = 'c' and b = 1)
+    >>> add_integer('c', 1)
+    Traceback (most recent call last):
+              ...
     TypeError: a must be an integer
