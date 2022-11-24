@@ -1,60 +1,82 @@
-Test cases for 0-add_integer module
-===================================
+Test cases for '0-add_integer.py'
+=================================
 
-The 0-add_integer module takes two integers or floats as arguments and returns their sum
+Adds two integers, with the function 'add_integer'
+--------------------------------------------------
 
-Usage
-=====
+Import 'add_integer'
+>>> add_integer = __import__('0-add_integer').add_integer
 
-Importing function from the module:
-    >>> add_integer = __import__('0-add_integer').add_integer
+Cases to be evaluated:
 
-Adding two positive integers (a = 1 and b = 1)
-    >>> add_integer(1, 1)
-    2
+Case #1: test with zero arguments
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
 
-Adding one positive and one negative integer (a = 10 and b = -4)
-    >>> add_integer(10, -4)
-    6
+Case #2: test Null variable to 'a'
+>>> add_integer(None, 1)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
 
-Adding two negative integers (a = -10 and b = -4)
-    >>> add_integer(-10, -4)
-    -14
+Case #3: test Null variable to 'b'
+>>> add_integer(1, None)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
 
-Adding two integers with the second being the same as the default value of b (a = 2 and b = 98)
-    >>> add_integer(2)
-    100
+Case #4: test Null for both variables
+>>> add_integer(None, None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
 
-Adding a positive float and a positive integer (a = 2.5 and b = 5)
-    >>> add_integer(2.5, 5)
-    7
+Case #5: test passing more than 2 argument
+>>> add_integer(1, 1, 1)
+Traceback (most recent call last):
+...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
 
-Adding a float and an integer where the integer is equal to the default value of b (a = 2.5 and b = 98)
-    >>> add_integer(2.5)
-    100
+Case #6: test 'a' such as string (int(b)).
+>>> add_integer("Holberton", 98)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
 
-Adding a positive float and a negative integer (a = 10.5 and b = -2)
-	    >>> add_integer(10.5, -2)
-	    8
+Case #7: test 'b' such as string (int(a)).
+>>> add_integer(98, "Holberton")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
 
-Adding two negative floats (a = -10.5 and b = -2)
-	    >>> add_integer(-10.5, -2)
-	    -12
+Case #8: test 'a' and 'b' such as string.
+>>> add_integer("98", "Holberton")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
 
-Adding an integer number and a string (a = 4 and b = "School")
-    >>> add_integer(4, "School")
-    Traceback (most recent call last):
-	      ...
-    TypeError: b must be an integer
+Case #9: test adds two arguments(int).
+>>> add_integer(2, -2)
+0
 
-Passing no argument to the function
-    >>> add_integer(None)
-    Traceback (most recent call last):
-	      ...
-    TypeError: a must be an integer
+Case #10: test adding 1 argument(int).
+>>> add_integer(2)
+100
 
-Adding a letter and a number (a = 'c' and b = 1)
-    >>> add_integer('c', 1)
-    Traceback (most recent call last):
-              ...
-    TypeError: a must be an integer
+Case #11: test adding between floats.
+>>> add_integer(20.5, 0.5)
+20
+
+Case #12: test adding complex number to 'a', the same response apply to 'b'.
+>>> add_integer(7+7j, 7)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+Case #13: test adding an infinity number as an argument.
+>>> add_integer(float('inf'), 1)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
