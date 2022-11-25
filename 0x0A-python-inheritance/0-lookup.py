@@ -8,4 +8,4 @@ def lookup(obj):
     Args:
         obj: The object passed in
     '''
-    return obj.__dir__()
+    return dir(obj)
