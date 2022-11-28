@@ -11,7 +11,7 @@ def is_kind_of_class(obj, a_class):
         obj: The object to checked.
         a_class: The class to be checked against
     """
-    if type(obj) == a_class or issubclass(obj, a_class):
+    if (type(obj) == a_class) or issubclass(obj, a_class):
         return True
     else:
         return False
