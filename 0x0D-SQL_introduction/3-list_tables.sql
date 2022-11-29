@@ -1,2 +1,2 @@
 -- A script that lists all the tables of a database
-SHOW TABLES FROM mysql;
+SHOW EXTENDED TABLES FROM mysql;
