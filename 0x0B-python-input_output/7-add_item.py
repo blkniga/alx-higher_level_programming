@@ -9,6 +9,6 @@ lst = []
 
 for items in sys.argv[1:]:
     lst.append(items)
-    save_to_json_file(lst, file_name)
+    load_from_json_file(file_name)
 
-load_from_json_file(file_name)
+save_to_json_file(lst, file_name)
