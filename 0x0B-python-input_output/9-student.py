@@ -11,16 +11,7 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, attrs=None):
-        '''A method that retrieves a
-        dictionary representation of a Student instance'''
-
-        if attrs is None:
-            return self.__dict__
-        else:
-            d = {}
-            for k, v in self.__dict__.items():
-                for item in attrs:
-                    if item == k:
-                        d[k] = v
-        return d
+    def to_json(self):
+        '''A function that retrieves a dictionary representation
+        of a Student instance'''
+        return self.__dict__
